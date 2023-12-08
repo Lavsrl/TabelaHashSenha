@@ -17,6 +17,10 @@ public class Hash {
     }
 
     public void addSenha(String usuario, String senha) {
+        if (tabelaSenha.containsKey(usuario)) {
+            System.out.println("Usuário já existente, por favor, selecione outro nome.");
+            return;
+        }
         String valorHashSenha = hashSenha(senha);
         tabelaSenha.put(usuario, valorHashSenha);
     }
